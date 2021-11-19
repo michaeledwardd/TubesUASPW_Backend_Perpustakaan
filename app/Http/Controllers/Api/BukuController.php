@@ -104,7 +104,7 @@ class BukuController extends Controller
         $updateData = $request->all();
         $validate = Validator::make($updateData, [
             'judulBuku' => 'required|max:60|regex:/^[\pL\s\-]+$/u',
-            'isbn' => 'required|unique:bukus',
+            'isbn' => 'required',
             'pengarang' => 'required',
             'tahunTerbit' => 'required|numeric|digits:4'
         ]); //Membuat rule validasi input
