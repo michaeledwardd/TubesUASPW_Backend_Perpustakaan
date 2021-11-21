@@ -49,7 +49,7 @@ class BukuController extends Controller
         $storeData = $request->all(); //Mengambil semua input dari API Client
         $validate = Validator::make($storeData, [
             'judulBuku' => 'required|max:60|regex:/^[\pL\s\-]+$/u',
-            'isbn' => 'required|unique:bukus',
+            'isbn' => 'required|unique:bukus|numeric',
             'pengarang' => 'required',
             'tahunTerbit' => 'required|numeric|digits:4'
         ]); //Membuat rule validasi input
@@ -104,7 +104,7 @@ class BukuController extends Controller
         $updateData = $request->all();
         $validate = Validator::make($updateData, [
             'judulBuku' => 'required|max:60|regex:/^[\pL\s\-]+$/u',
-            'isbn' => 'required',
+            'isbn' => 'required|numeric',
             'pengarang' => 'required',
             'tahunTerbit' => 'required|numeric|digits:4'
         ]); //Membuat rule validasi input

@@ -28,12 +28,3 @@ Route::group(['middleware' => 'auth:api'], function(){
     Route::put('buku/{id}', 'Api\bukuController@update');
     Route::delete('buku/{id}', 'Api\bukuController@destroy');
 });
-
-
-// Route::group(['middleware' => 'auth:api'], function(){
-//     Route::get('student', 'Api\StudentController@index');
-//     Route::get('student/{id}', 'Api\StudentController@show');
-//     Route::post('student', 'Api\StudentController@store');
-//     Route::put('student/{id}', 'Api\StudentController@update');
-//     Route::delete('student/{id}', 'Api\StudentController@destroy');
-// });

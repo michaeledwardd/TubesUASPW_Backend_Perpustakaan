@@ -15,7 +15,7 @@ class AuthController extends Controller
         $registrationData = $request->all();
         $validate = Validator::make($registrationData,[
             'name'=>'required|max:60',
-            'email'=>'required|email:rfc,dns|unique:users',
+            'email'=>'required|email:rfc,dns',
             'nomorIdentitas' => 'required|max:10',
             'username' => 'required|max:20',
             'password'=>'required'
