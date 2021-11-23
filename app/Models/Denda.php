@@ -6,12 +6,12 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Carbon\Carbon;
 
-class Buku extends Model
+class Denda extends Model
 {
     use HasFactory;
 
     protected $fillable = [
-        'judulBuku', 'isbn', 'pengarang', 'tahunTerbit'
+        'namaPeminjam', 'jumlahDenda', 'Status', 'TanggalPembayaran'
     ];
 
     public function getCreatedAttribute()
