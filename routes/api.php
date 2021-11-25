@@ -36,3 +36,11 @@ Route::group(['middleware' => 'auth:api'], function () {
     Route::put('denda/{id}', 'Api\dendaController@update');
     Route::delete('denda/{id}', 'Api\dendaController@destroy');
 });
+
+Route::group(['middleware' => 'auth:api'], function(){
+    Route::get('pengembalian', 'Api\pengembalianController@index');
+    Route::get('pengembalian/{id}', 'Api\pengembalianController@show');
+    Route::post('pengembalian', 'Api\pengembalianController@store');
+    Route::put('pengembalian/{id}', 'Api\pengembalianController@update');
+    Route::delete('pengembalian/{id}', 'Api\pengembalianController@destroy');
+});
