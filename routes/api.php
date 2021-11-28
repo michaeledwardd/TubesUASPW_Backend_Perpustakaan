@@ -22,6 +22,14 @@ Route::post('register', 'Api\AuthController@register');
 Route::post('login', 'Api\AuthController@login');
 
 Route::group(['middleware' => 'auth:api'], function () {
+    Route::get('user', 'Api\userController@index');
+    Route::get('user/{id}', 'Api\userController@show');
+    Route::post('user', 'Api\userController@store');
+    Route::put('user/{id}', 'Api\userController@update');
+    Route::delete('user/{id}', 'Api\userController@destroy');
+});
+
+Route::group(['middleware' => 'auth:api'], function () {
     Route::get('buku', 'Api\bukuController@index');
     Route::get('buku/{id}', 'Api\bukuController@show');
     Route::post('buku', 'Api\bukuController@store');
