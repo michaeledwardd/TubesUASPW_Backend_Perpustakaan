@@ -44,3 +44,11 @@ Route::group(['middleware' => 'auth:api'], function(){
     Route::put('pengembalian/{id}', 'Api\pengembalianController@update');
     Route::delete('pengembalian/{id}', 'Api\pengembalianController@destroy');
 });
+
+Route::group(['middleware' => 'auth:api'], function(){
+    Route::get('borrow', 'Api\borrowController@index');
+    Route::get('borrow/{id}', 'Api\borrowController@show');
+    Route::post('borrow', 'Api\borrowController@store');
+    Route::put('borrow/{id}', 'Api\borrowController@update');
+    Route::delete('borrow/{id}', 'Api\borrowController@destroy');
+});
