@@ -113,10 +113,10 @@ class PengembalianController extends Controller
             return response(['message' => $validate->errors()], 400); //Return error invalid input
         }
 
-        $pengembalian->namaPeminjam = $updateData['namaPeminjam']; //Edit namaPeminjam
-        $pengembalian->StatusPengembalian = $updateData['StatusPengembalian']; //Edit StatusPengembalian
-        $pengembalian->nomorIdentitas = $updateData['nomorIdentitas']; //Edit nomorIdentitas
-        $pengembalian->judulBuku = $updateData['judulBuku']; //Edit judulBuku
+        $Pengembalian->namaPeminjam = $updateData['namaPeminjam']; //Edit namaPeminjam
+        $Pengembalian->statusPengembalian = $updateData['statusPengembalian']; //Edit StatusPengembalian
+        $Pengembalian->nomorIdentitas = $updateData['nomorIdentitas']; //Edit nomorIdentitas
+        $Pengembalian->judulBuku = $updateData['judulBuku']; //Edit judulBuku
 
         if($Pengembalian->save()){
             return response([
