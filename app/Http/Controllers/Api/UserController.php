@@ -104,7 +104,7 @@ class UserController extends Controller
         $updateData = $request->all();
         $validate = Validator::make($updateData, [
             'name' => 'required|max:60',
-            'email' => 'required|email:rfc,dns',
+            'email' => 'required|email:rfc,dns|unique:users,email,'.$id,
             'nomorIdentitas' => 'required',
             'username' => 'required',
             'password' => 'required',
