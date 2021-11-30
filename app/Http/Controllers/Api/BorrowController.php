@@ -95,7 +95,7 @@ class BorrowController extends Controller
     public function update(Request $request, $id){
         $borrow = Borrow::find($id); //Mencari data Borrow berdasarkan id
 
-        if(is_null($Borrow)){
+        if(is_null($borrow)){
             return response([
                 'message' => 'Borrow Not Found',
                 'data' => null
