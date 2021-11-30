@@ -60,3 +60,6 @@ Route::group(['middleware' => 'auth:api'], function(){
     Route::put('borrow/{id}', 'Api\borrowController@update');
     Route::delete('borrow/{id}', 'Api\borrowController@destroy');
 });
+
+Route::get('email/verify/{id}', 'Api\EmailController@verify')->name('verificationapi.verify');
+Route::get('email/resend', 'Api\EmailController@resend')->name('verificationapi.resend');
